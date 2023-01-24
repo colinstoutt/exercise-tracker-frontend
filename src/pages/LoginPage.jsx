@@ -32,7 +32,7 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
   }
 
   return (
-    <div className="auth-form">
+    <div scroll="no" className="auth-form">
       <form className="login" onSubmit={handleSubmit}>
         <legend>Sign In</legend>
         <label htmlFor="email">Email</label>
