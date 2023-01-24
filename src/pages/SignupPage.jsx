@@ -84,8 +84,8 @@ function SignupPage(props) {
         />
         <div className="form-controls">
           <button disabled={!validForm()}>Sign Up</button>
-          <Link to="/">Cancel</Link>
         </div>
+        <Link to="/login">Sign In</Link>
       </form>
       <p>{messageState.msg}</p>
     </div>

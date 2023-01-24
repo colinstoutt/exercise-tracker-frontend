@@ -33,7 +33,7 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
   return (
     <div className="auth-form">
       <form onSubmit={handleSubmit}>
-        <legend>Log In</legend>
+        <legend>Sign In</legend>
         <input
           type="email"
           placeholder="Email"
@@ -49,9 +49,9 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
           onChange={handleChange}
         />
         <div className="form-controls">
-          <button>Log In</button>
-          <Link to="/">Cancel</Link>
+          <button>Sign In</button>
         </div>
+        <Link to="/signup">Sign Up</Link>
       </form>
     </div>
   );

@@ -25,7 +25,7 @@ function App(props) {
     <div className="App">
       <Nav user={userState.user} handleLogout={handleLogout} />
       <Main user={userState.user} handleSignupAndLogIn={handleSignupAndLogIn} />
-      {/* <Footer /> */}
+      <Footer user={userState.user} />
     </div>
   );
 }

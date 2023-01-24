@@ -1,13 +1,13 @@
-// import "./Footer.scss";
+import "./Footer.scss";
 
-// function Footer({ user }) {
-//   return !user ? (
-//     <Footer className="footer"></Footer>
-//   ) : (
-//     <Footer className="footer">
-//       <h1>Footer</h1>
-//     </Footer>
-//   );
-// }
+function Footer({ user }) {
+  return !user ? (
+    <div className="footer"></div>
+  ) : (
+    <div className="footer">
+      <h1>Footer</h1>
+    </div>
+  );
+}
 
-// export default Footer;
+export default Footer;
