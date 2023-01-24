@@ -4,6 +4,10 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1"
+></meta>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
