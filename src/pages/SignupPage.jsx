@@ -53,7 +53,7 @@ function SignupPage(props) {
 
   return (
     <div className="auth-form">
-      <form onSubmit={handleSubmit}>
+      <form className="signup" onSubmit={handleSubmit}>
         <legend>Sign Up</legend>
         <label htmlFor="name">Name</label>
         <br />
