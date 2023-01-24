@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../services/signupService";
+import "./auth.scss";
 
 function SignupPage(props) {
   const [messageState, setMessageState] = useState({
@@ -54,38 +55,52 @@ function SignupPage(props) {
     <div className="auth-form">
       <form onSubmit={handleSubmit}>
         <legend>Sign Up</legend>
+        <label htmlFor="name">Name</label>
+        <br />
         <input
           type="text"
-          placeholder="Name"
           value={formState.name}
           name="name"
           onChange={handleChange}
         />
+        <br />
+        <label htmlFor="email">Email</label>
+        <br />
         <input
           type="email"
-          placeholder="Email"
           value={formState.email}
           name="email"
           onChange={handleChange}
         />
+        <br />
+        <label htmlFor="password">Password</label>
+        <br />
         <input
           type="password"
-          placeholder="Password"
           value={formState.password}
           name="password"
           onChange={handleChange}
         />
+        <br />
+        <label htmlFor="confPassword">Confirm Password</label>
+        <br />
         <input
           type="password"
-          placeholder="Confirm Password"
           value={formState.passwordConf}
           name="passwordConf"
           onChange={handleChange}
         />
+        <br />
+
         <div className="form-controls">
           <button disabled={!validForm()}>Sign Up</button>
         </div>
-        <Link to="/login">Sign In</Link>
+        <p>
+          Already have an account?&nbsp;
+          <Link className="Link" to="/login">
+            Sign in
+          </Link>
+        </p>
       </form>
       <p>{messageState.msg}</p>
     </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../services/signupService";
+import "./auth.scss";
 
 function LoginPage({ handleSignupAndLogIn, updateMessage }) {
   const [formState, setFormState] = useState({
@@ -34,6 +35,8 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
     <div className="auth-form">
       <form onSubmit={handleSubmit}>
         <legend>Sign In</legend>
+        <label htmlFor="email">Email</label>
+        <br />
         <input
           type="email"
           placeholder="Email"
@@ -41,6 +44,10 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
           name="email"
           onChange={handleChange}
         />
+        <br />
+
+        <label htmlFor="password">Password</label>
+        <br />
         <input
           type="password"
           placeholder="Password"
@@ -51,7 +58,12 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
         <div className="form-controls">
           <button>Sign In</button>
         </div>
-        <Link to="/signup">Sign Up</Link>
+        <p>
+          New to this app?{" "}
+          <Link className="Link" to="/signup">
+            Sign Up for free!
+          </Link>
+        </p>
       </form>
     </div>
   );
