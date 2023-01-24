@@ -1,10 +1,5 @@
-html {
-  height: -webkit-fill-available;
-}
-
 .auth-form {
   height: 100vh;
-  height: -webkit-fill-available;
   overflow-y: hidden;
   margin: auto;
   display: flex;
@@ -17,12 +12,6 @@ form {
   border-radius: 10px;
   margin: auto;
   padding: 2rem;
-}
-.signup {
-  top: 20rem;
-}
-.login {
-  top: 25rem;
 }
 legend {
   font-size: 3.5rem;
