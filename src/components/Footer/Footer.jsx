@@ -1,7 +1,13 @@
-import "./Footer.scss";
+// import "./Footer.scss";
 
-const Footer = () => {
-  return <div>Footer</div>;
-};
+// function Footer({ user }) {
+//   return !user ? (
+//     <Footer className="footer"></Footer>
+//   ) : (
+//     <Footer className="footer">
+//       <h1>Footer</h1>
+//     </Footer>
+//   );
+// }
 
-export default Footer;
+// export default Footer;

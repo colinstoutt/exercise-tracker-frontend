@@ -1,6 +1,6 @@
 const config = {
   PROD: {
-    URL: "https://fullstack-mern-backend-lp.herokuapp.com",
+    URL: "https://exercise-tracker.herokuapp.com/",
   },
   DEV: {
     URL: "http://localhost:3001",

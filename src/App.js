@@ -7,7 +7,7 @@ import Nav from "./components/Nav/Nav";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 
-function App() {
+function App(props) {
   const [userState, setUserState] = useState({ user: getUserFromToken() });
 
   function handleSignupAndLogIn() {
@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <Nav user={userState.user} handleLogout={handleLogout} />
       <Main user={userState.user} handleSignupAndLogIn={handleSignupAndLogIn} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
