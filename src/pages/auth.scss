@@ -13,28 +13,33 @@ form {
   padding: 2rem;
 }
 legend {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 label {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 input {
-  font-size: 2rem;
+  font-size: 1.9rem;
+  padding: 0.3rem 0.2rem;
   margin: 0.1rem 0 0.5rem 0;
+  width: 100%;
 }
 button {
-  font-size: 1.4rem;
+  font-size: 1.9rem;
   margin-top: 0.5rem;
   padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(85, 166, 178);
 }
 p {
-  font-size: 1.4rem;
+  font-size: 1.9rem;
   color: black;
   position: relative;
-  top: 4.5rem;
+  top: 5rem;
 }
 .Link {
-  font-size: 1.4rem;
+  font-size: 1.9rem;
   color: rgb(70, 159, 189);
 }

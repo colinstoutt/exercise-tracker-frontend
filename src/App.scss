@@ -15,11 +15,9 @@
 body {
   min-height: 100vh;
   font-family: sans-serif;
-  -webkit-appearance: none;
 }
 html {
   font-size: 62.5%;
-  -webkit-appearance: none;
 }
 
 img,
@@ -28,4 +26,9 @@ svg,
 video {
   display: block;
   max-width: 100%;
+}
+
+button {
+  -webkit-border-radius: 0 !important;
+  -webkit-appearance: none !important;
 }
