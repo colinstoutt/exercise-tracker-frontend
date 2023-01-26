@@ -32,10 +32,12 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
   }
 
   return (
-    <div scroll="no" className="auth-form">
-      <form className="login" onSubmit={handleSubmit}>
-        <legend>Sign In</legend>
-        <label htmlFor="email">Email</label>
+    <div scroll="no" className="auth">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <legend className="auth-form__title">Sign In</legend>
+        <label className="auth-form__label" htmlFor="email">
+          Email
+        </label>
         <br />
         <input
           type="email"
@@ -43,10 +45,13 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
           value={formState.email}
           name="email"
           onChange={handleChange}
+          className="auth-form__input"
         />
         <br />
 
-        <label htmlFor="password">Password</label>
+        <label className="auth-form__label" htmlFor="password">
+          Password
+        </label>
         <br />
         <input
           type="password"
@@ -54,14 +59,15 @@ function LoginPage({ handleSignupAndLogIn, updateMessage }) {
           value={formState.password}
           name="password"
           onChange={handleChange}
+          className="auth-form__input"
         />
         <div className="form-controls">
-          <button>Sign In</button>
+          <button className="auth-form__button">Sign In</button>
         </div>
-        <p>
-          New to this app?{" "}
-          <Link className="Link" to="/signup">
-            Sign Up for free!
+        <p className="auth-form__Link">
+          Don't have an account?{" "}
+          <Link className="auth-form__Link-btn" to="/signup">
+            Create
           </Link>
         </p>
       </form>

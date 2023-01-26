@@ -1,46 +1,69 @@
-.auth-form {
+.auth {
   height: 100vh;
   overflow: hidden;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-form {
-  position: absolute;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: auto;
-  padding: 2rem;
-}
-legend {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-label {
-  font-size: 1.8rem;
-}
-input {
-  font-size: 1.9rem;
-  padding: 0.3rem 0.2rem;
-  margin: 0.1rem 0 0.5rem 0;
-  width: 100%;
-}
-button {
-  font-size: 1.9rem;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(85, 166, 178);
-}
-p {
-  font-size: 1.9rem;
-  color: black;
-  position: relative;
-  top: 5rem;
-}
-.Link {
-  font-size: 1.9rem;
-  color: rgb(70, 159, 189);
+
+  &-form {
+    position: absolute;
+    border-radius: 10px;
+    margin: auto;
+    padding: 2rem;
+
+    &__title {
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    &__label {
+      font-size: 1.4rem;
+    }
+    &__input {
+      font-size: 1.9rem;
+      padding: 0.3rem 1rem;
+      margin: 0.1rem 0 1.5rem 0;
+      width: 300px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      &:last-of-type {
+        margin-bottom: 3rem;
+      }
+    }
+    &__button {
+      font-size: 1.4rem;
+      margin: auto;
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 50px;
+      background-color: #243851;
+      color: white;
+      text-transform: uppercase;
+      display: block;
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+    &__Link {
+      font-size: 1.4rem;
+      color: black;
+      position: relative;
+      top: 1rem;
+      text-align: center;
+
+      &-btn {
+        font-size: 1.4rem;
+        color: darkblue;
+      }
+    }
+  }
 }

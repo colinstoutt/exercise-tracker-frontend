@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
 .App {
   height: 100%;
 }
@@ -17,8 +19,10 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "poppins", sans-serif;
   height: 100%;
+  max-width: 450px;
+  margin: auto;
 }
 html {
   font-size: 62.5%;
@@ -33,7 +37,7 @@ video {
   max-width: 100%;
 }
 
-button {
-  -webkit-border-radius: 0 !important;
-  -webkit-appearance: none !important;
-}
+// button {
+//   -webkit-border-radius: 0 !important;
+//   -webkit-appearance: none !important;
+// }

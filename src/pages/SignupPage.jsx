@@ -52,52 +52,66 @@ function SignupPage(props) {
   }
 
   return (
-    <div scroll="no" className="auth-form">
-      <form className="signup" onSubmit={handleSubmit}>
-        <legend>Sign Up</legend>
-        <label htmlFor="name">Name</label>
+    <div scroll="no" className="auth">
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <legend className="auth-form__title">Sign Up</legend>
+        <label className="auth-form__label" htmlFor="name">
+          Name
+        </label>
         <br />
         <input
           type="text"
           value={formState.name}
           name="name"
           onChange={handleChange}
+          className="auth-form__input"
         />
         <br />
-        <label htmlFor="email">Email</label>
+        <label className="auth-form__label" htmlFor="email">
+          Email
+        </label>
         <br />
         <input
           type="email"
           value={formState.email}
           name="email"
           onChange={handleChange}
+          className="auth-form__input"
         />
         <br />
-        <label htmlFor="password">Password</label>
+        <label className="auth-form__label" htmlFor="password">
+          Password
+        </label>
         <br />
         <input
           type="password"
           value={formState.password}
           name="password"
           onChange={handleChange}
+          className="auth-form__input"
         />
         <br />
-        <label htmlFor="confPassword">Confirm Password</label>
+        <label className="auth-form__label" htmlFor="confPassword">
+          Confirm Password
+        </label>
         <br />
         <input
           type="password"
           value={formState.passwordConf}
           name="passwordConf"
           onChange={handleChange}
+          className="auth-form__input"
         />
         <br />
 
         <div className="form-controls">
-          <button disabled={!validForm()}>Sign Up</button>
+          <button className="auth-form__button" disabled={!validForm()}>
+            Create account
+          </button>
         </div>
-        <p>
+        <p className="auth-form__Link">
           Already have an account?&nbsp;
-          <Link className="Link" to="/login">
+          <Link className="auth-form__Link-btn" to="/login">
             Sign in
           </Link>
         </p>
