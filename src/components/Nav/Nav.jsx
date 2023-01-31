@@ -6,8 +6,8 @@ function Nav({ user, handleLogout }) {
     <nav className="nav"></nav>
   ) : (
     <nav className="nav">
-      <Link to="/">Home</Link>
-      <Link to="" onClick={handleLogout}>
+      <h1 className="nav__name">{user.name}</h1>
+      <Link className="nav__logout" onClick={handleLogout}>
         Sign Out
       </Link>
     </nav>
