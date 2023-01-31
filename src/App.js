@@ -24,7 +24,13 @@ function App(props) {
   return (
     <div className="App">
       <Nav user={userState.user} handleLogout={handleLogout} />
-      <Main user={userState.user} handleSignupAndLogIn={handleSignupAndLogIn} />
+      <Main
+        // workouts={workouts}
+        // setWorkouts={setWorkouts}
+        // handleFilter={handleFilter}
+        user={userState.user}
+        handleSignupAndLogIn={handleSignupAndLogIn}
+      />
       <Footer user={userState.user} />
     </div>
   );
