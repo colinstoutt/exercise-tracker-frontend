@@ -42,3 +42,22 @@ video {
 //   -webkit-border-radius: 0 !important;
 //   -webkit-appearance: none !important;
 // }
+
+.plus-icon {
+  border: 2px solid rgb(78, 163, 78);
+  background-color: rgb(78, 163, 78);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  padding: 0.2rem;
+  color: white;
+}
+.minus-icon {
+  border: 2px solid rgb(213, 56, 56);
+  background-color: rgb(213, 56, 56);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  padding: 0.2rem;
+  color: white;
+}

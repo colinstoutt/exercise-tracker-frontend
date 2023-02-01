@@ -1,5 +1,8 @@
 import "./Index.scss";
 import { useState } from "react";
+import Workout from "../../components/Workout/Workout";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Index = ({
   user,
@@ -32,38 +35,29 @@ const Index = ({
       muscleGroup: "",
       exercises: [],
     });
+    console.log(workouts);
   };
 
   const loaded = () => {
-    return workouts.map((workout, index) => {
-      return (
-        <div key={index}>
-          <h1 className="index__day">{workout.day.toUpperCase()}</h1>
-          <h1 className="index__muscle-group">
-            {workout.muscleGroup.toUpperCase()}
-          </h1>
-          {workout.exercises.map((exercise, index) => {
-            return (
-              <div idx={index}>
-                <h1>Test123</h1>
-              </div>
-            );
-          })}
-          <button>Add new exercise</button>
-          <button onClick={() => deleteWorkout(workout._id)}>
-            Delete Workout
-          </button>
-        </div>
-      );
-    });
+    return <Workout workouts={workouts} deleteWorkout={deleteWorkout} />;
   };
-  const loading = () => <h1>Loading...</h1>;
+  const loading = () => (
+    <div className="index__spinner-icon">
+      <i
+        className="fa fa-circle-o-notch fa-spin"
+        style={{ fontSize: "40px", textAlign: "center", margin: "auto" }}
+      ></i>
+    </div>
+  );
 
   return (
     <div className="index">
       {workouts ? loaded() : loading()}
-      <form onSubmit={handleSubmit}>
+      <h1 className="index__create-title">Create a new workout</h1>
+
+      <form className="index__form" onSubmit={handleSubmit}>
         <input
+          className="index__input index__input-day"
           type="text"
           name="day"
           placeholder="Day"
@@ -71,13 +65,18 @@ const Index = ({
           onChange={handleChange}
         />
         <input
+          className="index__input index__input-muscle-group"
           type="text"
           name="muscleGroup"
           placeholder="Muscle Group"
           value={workoutForm.muscleGroup}
           onChange={handleChange}
         />
-        <button type="submit">Create Workout</button>
+
+        <button className="index__input-submit" type="submit">
+          <FontAwesomeIcon className="plus-icon" icon={faPlus} />
+          <p>Create Workout</p>
+        </button>
       </form>
     </div>
   );
