@@ -1,0 +1,49 @@
+.exercise {
+  border: 2px solid rgba(0, 0, 0, 0.773);
+  margin: 1.5rem;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+
+  &__title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+  }
+  &__counter {
+    font-size: 3rem;
+    width: 10rem;
+    &-span {
+      font-size: 1.8rem;
+    }
+  }
+  &__plus-icon {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 0.2rem;
+    color: black;
+  }
+  &__minus-icon {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 0.2rem;
+    color: black;
+  }
+  &__textarea {
+    display: block;
+    margin: 1rem auto;
+    width: 20rem;
+    height: 5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+  }
+}

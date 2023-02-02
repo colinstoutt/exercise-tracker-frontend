@@ -11,7 +11,7 @@ import Index from "../../pages/Index/Index";
 
 const Main = (props) => {
   const [workouts, setWorkouts] = useState(null);
-  const workoutApi = "http://localhost:3001/api/workouts";
+  const workoutApi = "http://localhost:3001/api/workouts/";
 
   const getWorkouts = async (props) => {
     const data = await fetch(workoutApi, {
@@ -44,8 +44,21 @@ const Main = (props) => {
   };
   // console.log(workouts);
 
+  const addExercise = async (workout, id) => {
+    await fetch(workoutApi + id, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+        // Add this header - don't forget the space after Bearer
+        Authorization: `Bearer ${getToken()}`,
+      },
+      body: JSON.stringify(workout),
+    });
+    getWorkouts();
+  };
+
   const updateWorkout = async (workout, id) => {
-    await fetch(`${workoutApi}/` + id, {
+    await fetch(workoutApi + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +71,7 @@ const Main = (props) => {
   };
 
   const deleteWorkout = async (id) => {
-    await fetch(`${workoutApi}/` + id, {
+    await fetch(workoutApi + id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

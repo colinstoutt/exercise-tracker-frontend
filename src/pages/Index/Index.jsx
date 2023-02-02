@@ -39,7 +39,11 @@ const Index = ({
   };
 
   const loaded = () => {
-    return <Workout workouts={workouts} deleteWorkout={deleteWorkout} />;
+    return workouts.map((workout, index) => {
+      return (
+        <Workout key={index} workout={workout} deleteWorkout={deleteWorkout} />
+      );
+    });
   };
   const loading = () => (
     <div className="index__spinner-icon">
