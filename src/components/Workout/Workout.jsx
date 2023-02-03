@@ -2,11 +2,33 @@ import "./Workout.scss";
 import Exercise from "../Exercise/Exercise";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
-const Workout = ({ workout, deleteWorkout }) => {
+const Workout = ({ workout, deleteWorkout, addExercise, deleteExercise }) => {
+  const [exerciseForm, setExerciseForm] = useState({
+    title: "",
+  });
+  const handleChange = (e) => {
+    setExerciseForm({
+      ...exerciseForm,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addExercise(exerciseForm, workout._id);
+    setExerciseForm({
+      title: "",
+    });
+  };
   return (
     <div className="workout">
+      <FontAwesomeIcon
+        onClick={() => deleteWorkout(workout._id)}
+        className="workout__delete"
+        icon={faCircleXmark}
+      />
       <h1 className="workout__day">
         {workout.day.length > 3
           ? workout.day.toUpperCase().substring(0, 3)
@@ -16,20 +38,31 @@ const Workout = ({ workout, deleteWorkout }) => {
         {workout.muscleGroup.toUpperCase()}
       </h1>
       {workout.exercises.map((exercise, index) => {
-        return <Exercise exercise={exercise} key={index} />;
+        return (
+          <Exercise
+            workoutId={workout._id}
+            deleteExercise={deleteExercise}
+            exercise={exercise}
+            index={index}
+          />
+        );
       })}
       <div className="workout__btns">
-        <button className="workout__btn workout__btn-add-exercise">
-          <FontAwesomeIcon className="plus-icon" icon={faPlus} />
-          <p>Add new exercise</p>
-        </button>
-        <button
-          className="workout__btn workout__btn-del-workout"
-          onClick={() => deleteWorkout(workout._id)}
-        >
-          <FontAwesomeIcon className="minus-icon" icon={faMinus} />
-          <p>Delete Workout</p>
-        </button>
+        <div className="workout__add-new">
+          <form onSubmit={handleSubmit}>
+            <input
+              className=""
+              type="text"
+              name="title"
+              placeholder="Add new exercise..."
+              value={exerciseForm.title}
+              onChange={handleChange}
+            />
+            <button className="index__input-submit" type="submit">
+              <FontAwesomeIcon className="plus-icon" icon={faPlus} />
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

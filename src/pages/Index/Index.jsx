@@ -12,6 +12,8 @@ const Index = ({
   createWorkout,
   deleteWorkout,
   updateWorkout,
+  addExercise,
+  deleteExercise,
 }) => {
   const [workoutForm, setWorkoutForm] = useState({
     user: user._id,
@@ -41,7 +43,13 @@ const Index = ({
   const loaded = () => {
     return workouts.map((workout, index) => {
       return (
-        <Workout key={index} workout={workout} deleteWorkout={deleteWorkout} />
+        <Workout
+          key={index}
+          workout={workout}
+          deleteWorkout={deleteWorkout}
+          addExercise={addExercise}
+          deleteExercise={deleteExercise}
+        />
       );
     });
   };

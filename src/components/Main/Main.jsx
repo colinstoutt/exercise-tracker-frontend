@@ -44,19 +44,6 @@ const Main = (props) => {
   };
   // console.log(workouts);
 
-  const addExercise = async (workout, id) => {
-    await fetch(workoutApi + id, {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/json",
-        // Add this header - don't forget the space after Bearer
-        Authorization: `Bearer ${getToken()}`,
-      },
-      body: JSON.stringify(workout),
-    });
-    getWorkouts();
-  };
-
   const updateWorkout = async (workout, id) => {
     await fetch(workoutApi + id, {
       method: "PUT",
@@ -73,6 +60,31 @@ const Main = (props) => {
   const deleteWorkout = async (id) => {
     await fetch(workoutApi + id, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        // Add this header - don't forget the space after Bearer
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
+    getWorkouts();
+  };
+
+  const addExercise = async (workout, id) => {
+    await fetch(workoutApi + id, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+        // Add this header - don't forget the space after Bearer
+        Authorization: `Bearer ${getToken()}`,
+      },
+      body: JSON.stringify(workout),
+    });
+    getWorkouts();
+  };
+
+  const deleteExercise = async (id, index) => {
+    await fetch(`${workoutApi}${id}/${index}`, {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         // Add this header - don't forget the space after Bearer
@@ -101,6 +113,8 @@ const Main = (props) => {
                 createWorkout={createWorkout}
                 deleteWorkout={deleteWorkout}
                 updateWorkout={updateWorkout}
+                addExercise={addExercise}
+                deleteExercise={deleteExercise}
               />
             </ProtectedRoute>
           }

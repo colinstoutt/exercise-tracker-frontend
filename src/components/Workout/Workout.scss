@@ -1,4 +1,5 @@
 .workout {
+  position: relative;
   padding: 0.5rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -15,29 +16,32 @@
     color: darkgray;
     text-align: center;
   }
-  &__btns {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1rem;
-  }
   &__btn {
-    padding: 0.2rem 1rem 0.2rem 0.3rem;
-    border-radius: 50px;
-    font-weight: 500;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    &__add-new {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     &-add-exercise {
       color: rgb(78, 163, 78);
       border: 2px solid rgb(78, 163, 78);
+      border: none;
+      background-color: rgba(255, 255, 255, 0);
     }
     &-del-workout {
       color: rgb(213, 56, 56);
       border: 2px solid rgb(213, 56, 56);
     }
+  }
+  &__delete {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    color: rgb(213, 56, 56);
   }
   &:last-of-type {
     margin-bottom: 3rem;
