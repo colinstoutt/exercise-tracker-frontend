@@ -16,24 +16,36 @@
     color: darkgray;
     text-align: center;
   }
-  &__btn {
-    &__add-new {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
 
-    &-add-exercise {
-      color: rgb(78, 163, 78);
-      border: 2px solid rgb(78, 163, 78);
+  &__exercise-form {
+    margin: 1rem 0 1rem 0;
+    display: flex;
+    &-submit {
       border: none;
-      background-color: rgba(255, 255, 255, 0);
-    }
-    &-del-workout {
-      color: rgb(213, 56, 56);
-      border: 2px solid rgb(213, 56, 56);
+      border-radius: 0 50px 50px 0;
+      background-color: rgb(78, 163, 78);
+
+      &-icon {
+        color: white;
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0 1rem 0 1rem;
+      }
     }
   }
+  &__add-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-input {
+      padding: 0.5rem 1rem;
+      border-radius: 50px 0 0 50px;
+      border: 2px solid rgb(78, 163, 78);
+      border-right: none;
+      width: 15rem;
+    }
+  }
+
   &__delete {
     display: inline-block;
     width: 2rem;

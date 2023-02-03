@@ -5,7 +5,7 @@
 
   &__form {
     display: grid;
-    gap: 1rem;
+    gap: 0.5rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
   }
@@ -43,8 +43,12 @@
   }
   &__input {
     padding: 0.5rem 1rem;
-    border-radius: 10px;
+    border-radius: 50px;
     border: 2px solid black;
+    width: 12rem;
+    &:first-of-type {
+      justify-self: end;
+    }
 
     &-submit {
       color: rgb(78, 163, 78);

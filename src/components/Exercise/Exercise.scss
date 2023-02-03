@@ -1,5 +1,6 @@
 .exercise {
-  // border: 1px solid rgba(0, 0, 0, 0.303);
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.303);
   margin: 1.5rem;
   padding: 2rem 3rem;
   border-radius: 10px;
@@ -22,6 +23,14 @@
     &-span {
       font-size: 1.8rem;
     }
+  }
+  &__delete {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgb(213, 56, 56);
+    width: 2rem;
+    height: 2rem;
   }
   &__plus-icon {
     border: 1px solid black;

@@ -84,7 +84,6 @@ const Index = ({
           value={workoutForm.muscleGroup}
           onChange={handleChange}
         />
-
         <button className="index__input-submit" type="submit">
           <FontAwesomeIcon className="plus-icon" icon={faPlus} />
           <p>Create Workout</p>

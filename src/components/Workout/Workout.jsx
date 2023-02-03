@@ -47,22 +47,24 @@ const Workout = ({ workout, deleteWorkout, addExercise, deleteExercise }) => {
           />
         );
       })}
-      <div className="workout__btns">
-        <div className="workout__add-new">
-          <form onSubmit={handleSubmit}>
-            <input
-              className=""
-              type="text"
-              name="title"
-              placeholder="Add new exercise..."
-              value={exerciseForm.title}
-              onChange={handleChange}
+
+      <div className="workout__add-new">
+        <form className="workout__exercise-form" onSubmit={handleSubmit}>
+          <input
+            className="workout__add-new-input"
+            type="text"
+            name="title"
+            placeholder="Add new exercise..."
+            value={exerciseForm.title}
+            onChange={handleChange}
+          />
+          <button className="workout__exercise-form-submit" type="submit">
+            <FontAwesomeIcon
+              className="workout__exercise-form-submit-icon"
+              icon={faPlus}
             />
-            <button className="index__input-submit" type="submit">
-              <FontAwesomeIcon className="plus-icon" icon={faPlus} />
-            </button>
-          </form>
-        </div>
+          </button>
+        </form>
       </div>
     </div>
   );
