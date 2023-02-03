@@ -14,16 +14,26 @@ import Notes from "../Notes/Notes";
 import { useState } from "react";
 
 const Exercise = ({ exercise, deleteExercise, index, workoutId }) => {
-  const [toggleWeight, setToggleWeight] = useState(false);
-  const [toggleSets, setToggleSets] = useState(false);
-  const [toggleReps, setToggleReps] = useState(false);
-  const [toggleTime, setToggleTime] = useState(false);
-  const [toggleNotes, setToggleNotes] = useState(false);
+  const [toggles, setToggles] = useState({
+    weight: false,
+    sets: false,
+    reps: false,
+    time: false,
+    notes: false,
+  });
 
-  function handleToggle(state, setState, e) {
-    setState(!state);
-    !state
-      ? (e.target.style.color = "black")
+  const toggleColors = {
+    weight: "#50514f",
+    sets: "#f25f5c",
+    reps: "#70c1b3",
+    time: "#247ba0",
+    notes: "#ffe066",
+  };
+
+  function handleToggle(stateKey, e) {
+    setToggles({ ...toggles, [stateKey]: !toggles[stateKey] });
+    !toggles[stateKey]
+      ? (e.target.style.color = toggleColors[stateKey])
       : (e.target.style.color = "lightgrey");
   }
 
@@ -37,38 +47,38 @@ const Exercise = ({ exercise, deleteExercise, index, workoutId }) => {
       />
       <div className="exercise__toggle-btns">
         <FontAwesomeIcon
-          onClick={() => handleToggle(toggleWeight, setToggleWeight)}
+          onClick={(e) => handleToggle("weight", e)}
           className="exercise__toggle-icon"
           icon={faWeightHanging}
         />
         <span
-          onClick={() => handleToggle(toggleSets, setToggleSets)}
+          onClick={(e) => handleToggle("sets", e)}
           className="exercise__toggle-icon exercise__toggle-icon-letter"
         >
           S
         </span>
         <span
-          onClick={() => handleToggle(toggleReps, setToggleReps)}
+          onClick={(e) => handleToggle("reps", e)}
           className="exercise__toggle-icon exercise__toggle-icon-letter"
         >
           R
         </span>
         <FontAwesomeIcon
-          onClick={() => handleToggle(toggleTime, setToggleTime)}
+          onClick={(e) => handleToggle("time", e)}
           className="exercise__toggle-icon "
           icon={faClock}
         />
         <FontAwesomeIcon
-          onClick={() => handleToggle(toggleNotes, setToggleNotes)}
+          onClick={(e) => handleToggle("notes", e)}
           className="exercise__toggle-icon"
           icon={faNoteSticky}
         />
       </div>
-      {toggleWeight ? <Weight /> : <div></div>}
-      {toggleSets ? <Sets /> : <div></div>}
-      {toggleReps ? <Reps /> : <div></div>}
-      {toggleTime ? <Time /> : <div></div>}
-      {toggleNotes ? <Notes /> : <div></div>}
+      {toggles["weight"] ? <Weight /> : <div></div>}
+      {toggles["sets"] ? <Sets /> : <div></div>}
+      {toggles["reps"] ? <Reps /> : <div></div>}
+      {toggles["time"] ? <Time /> : <div></div>}
+      {toggles["notes"] ? <Notes /> : <div></div>}
     </div>
   );
 };

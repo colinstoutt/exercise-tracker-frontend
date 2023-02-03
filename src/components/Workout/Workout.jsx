@@ -3,7 +3,7 @@ import Exercise from "../Exercise/Exercise";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Workout = ({ workout, deleteWorkout, addExercise, deleteExercise }) => {
   const [exerciseForm, setExerciseForm] = useState({
